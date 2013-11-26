@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock title %}
+
+{% block main %}
+<div>
+    <form method="post">
+        <legend>Login</legend>
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %}
+        <div>
+            <div>{{ form.username.label() }}</div>
+            <div class="controls">
+                {{ form.username }}
+                {% for error in form.username.errors %}<span>{{ error }}</span>{% endfor %}
+            </div>
+        </div>
+        <div>
+            <div>{{ form.password.label() }}</div>
+            <div class="controls">
+                {{ form.password }}
+                {% for error in form.username.errors %}<span>{{ error }}</span>{% endfor %}
+            </div>
+        </div>
+        <div>
+            <button type="submit">Log In</button>
+        </div>
+    </form>
+</div>
+{% endblock main %}

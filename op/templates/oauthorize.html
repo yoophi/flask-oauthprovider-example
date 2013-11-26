@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block main %}
+{{ redirect_uri }}, {{ client.client_id }}
+{#
+
+    {'scopes': [],
+     'client': <op.app.Client object at 0x1066afe50>,
+      u'state': None,
+       u'redirect_uri': u'http://yoophi.com/oauth/redirect',
+        u'response_type': u'code',
+         u'client_id': u'foo'}
+
+ #}
+    <form method="post" action="{{ url_for('authorize') }}">
+    <input type="text" name="confirm" value="yes" />
+        <input type="text" name="scope"
+               value="email" />
+        <input type="text" name="client_id" value="{{  client.client_id }}" />
+        <input type="text" name="response_type" value="{{ response_type }}" />
+    <input type="submit" />
+    </form>
+{% endblock main %}
