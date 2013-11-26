@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    {% block extra_head %}{% endblock extra_head %}
+  </head>
+  <body>
+  <div class="content container">
+    {% block main %}{% endblock main %}
+  </div>
+  </body>
+</html>
